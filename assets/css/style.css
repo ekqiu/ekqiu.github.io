@@ -161,7 +161,7 @@ html {
     cursor: pointer;
     text-align: center;
     font-size: 25px;
-
+    color: black;
     display: inline;
 }
 
@@ -370,7 +370,7 @@ body[light-mode=dark] .light-mode-button span:nth-child(2) {
     position: relative;
     text-align: center;
     text-transform: capitalize;
-    color: whitesmoke;
+    color: whitesmoke!important;
 
 }
 
