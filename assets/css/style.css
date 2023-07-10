@@ -22,6 +22,8 @@ body.fade {
 }
 
 /* Media Query for Small Devices */
+
+/*
 @media (max-width: 768px) {
     .jumbotron h1 {
         font-size: 50%;
@@ -35,6 +37,7 @@ body.fade {
         font-size: 30%;
     }
 }
+*/
 
 .content {
     display: flex;
