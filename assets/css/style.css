@@ -24,15 +24,15 @@ body.fade {
 /* Media Query for Small Devices */
 @media (max-width: 768px) {
     .jumbotron h1 {
-        font-size: 256px;
+        font-size: 50%;
     }
 
     .jumbotron p {
-        font-size: 168px;
+        font-size: 35%;
     }
 
     .social-icons li a i {
-        font-size: 126px;
+        font-size: 30%;
     }
 }
 
