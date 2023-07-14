@@ -39,3 +39,63 @@ body.fade {
     color: #0f0f0f;
     transform: translateY(-5px);
 }
+
+/* Increase font sizes for smaller screens */
+@media (max-width: 767px) {
+    .jumbotron {
+        padding: 20px 60px 20px 60px !important;
+    }
+    body {
+        font-size: 18px;
+    }
+
+    .jumbotron h1 {
+        font-size: 40px;
+    }
+
+    .jumbotron p {
+        font-size: 24px;
+    }
+
+    .social-icons li a i {
+        font-size: 40px;
+    }
+}
+
+/* Adjust padding and margins for smaller screens */
+@media (max-width: 380px) {
+    .jumbotron {
+        padding: 20px 60px 20px 60px !important;
+    }
+
+    .jumbotron h1 {
+        margin-bottom: 10px;
+    }
+
+    .jumbotron p {
+        margin-bottom: 20px;
+    }
+
+    .social-icons li {
+        margin-bottom: 10px;
+    }
+}
+
+/* Adjust padding and margins for smallerer screens */
+@media (max-width: 280px) {
+    .jumbotron {
+        padding: 10px 40px 10px 40px !important;
+    }
+
+    .jumbotron h1 {
+        margin-bottom: 10px;
+    }
+
+    .jumbotron p {
+        margin-bottom: 20px;
+    }
+
+    .social-icons li {
+        margin-bottom: 10px;
+    }
+}
