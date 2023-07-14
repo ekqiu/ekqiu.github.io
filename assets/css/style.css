@@ -21,24 +21,6 @@ body.fade {
     opacity: 0;
 }
 
-/* Media Query for Small Devices */
-
-/*
-@media (max-width: 768px) {
-    .jumbotron h1 {
-        font-size: 50%;
-    }
-
-    .jumbotron p {
-        font-size: 35%;
-    }
-
-    .social-icons li a i {
-        font-size: 30%;
-    }
-}
-*/
-
 .content {
     display: flex;
     flex-direction: column;
