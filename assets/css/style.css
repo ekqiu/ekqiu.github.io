@@ -40,6 +40,8 @@ body.fade {
     transform: translateY(-5px);
 }
 
+
+
 /* Increase font sizes for smaller screens */
 @media (max-width: 767px) {
     .jumbotron {
@@ -99,3 +101,4 @@ body.fade {
         margin-bottom: 10px;
     }
 }
+
