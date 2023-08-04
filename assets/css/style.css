@@ -41,7 +41,7 @@ body.fade {
 }
 
 .jumbotron h1 p {
-    font-family: "Montserrat"
+    font-family: 'Montserrat';
 }
 
 /* Increase font sizes for smaller screens */
