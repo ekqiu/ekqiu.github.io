@@ -40,7 +40,9 @@ body.fade {
     transform: translateY(-5px);
 }
 
-
+.jumbotron h1 p {
+    font-family: "Montserrat"
+}
 
 /* Increase font sizes for smaller screens */
 @media (max-width: 767px) {
