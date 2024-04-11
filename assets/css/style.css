@@ -54,11 +54,11 @@ body.fade {
     }
 
     .jumbotron h1 {
-        font-size: 40px;
+        font-size: 40px !important;
     }
 
     .jumbotron p {
-        font-size: 15px;
+        font-size: 15px !important;
     }
 
     .social-icons li a i {
