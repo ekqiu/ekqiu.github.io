@@ -57,7 +57,7 @@ body.fade {
         font-size: 40px !important;
     }
 
-    .jumbotron p {
+    .jumbotron p .btn-lg {
         font-size: 15px !important;
     }
 
@@ -76,19 +76,39 @@ body.fade {
         margin-bottom: 10px;
     }
 
-    .jumbotron p {
-        margin-bottom: 20px;
+    .jumbotron p  {
+        margin-bottom: 10px;
     }
 
     .social-icons li {
         margin-bottom: 10px;
     }
+    body {
+        font-size: 15px;
+    }
+
+    .jumbotron h1 {
+        font-size: 30px !important;
+    }
+
+    .jumbotron p {
+        font-size: 10px !important;
+    }
+    .btn-lg {
+        font-size: 10px !important;
+        padding: 5px 10px !important;
+        margin: 5px !important;
+    }
+
+    .social-icons li a i {
+        font-size: 30px;
+    }
 }
 
 /* Adjust padding and margins for smallerer screens */
-@media (max-width: 280px) {
+@media (max-width: 330px) {
     .jumbotron {
-        padding: 10px 40px 10px 40px !important;
+        padding: 20px 10px 20px 10px !important;
     }
 
     .jumbotron h1 {
@@ -156,5 +176,63 @@ body.fade {
     /* Makes the button pill-shaped */
     color:#0f0f0f;
     background-color: #96b893;
-    margin-top: 20px;
+    margin: 10px;
+}
+
+.portfolio-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.portfolio-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-item .item-info {
+    flex: 1;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item .item-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.portfolio-item .item-info p {
+    font-size: 16px;
+    color: #777777;
+    margin-bottom: 20px;
+}
+
+.portfolio-item .item-info .btn {
+    border-radius: 50px;
+    background-color: #96b893;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.portfolio-item .item-info .btn:hover {
+    background-color: #6c8e6b;
 }
