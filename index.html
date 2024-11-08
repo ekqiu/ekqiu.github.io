@@ -17,12 +17,96 @@
 </head>
 
 <body>
-<nav>
-    <ul>
-        <li><a href="./">home</a></li>
-        <li><a href="./portfolio">portfolio</a></li>
-        <li><a href="./card">contact</a></li>
-    </ul>
-</nav>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Evan Khee</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <h1 class="display-4">Evan Khee</h1>
+        <p class="lead"> Student </p>
+        <a href="/card" class="btn btn-primary btn-lg">View Social Card</a><a href="/portfolio" class="btn btn-primary btn-lg">View Portfolio</a>
+    </header>
+
+    <section id="about" class="container text-center">
+        <h2>About Me</h2>
+        <p>Hello! I'm Evan, a passionate developer with experience in web development, machine learning, and robotics. I
+            love creating innovative solutions and learning new technologies.</p>
+    </section>
+
+    <section id="skills" class="container text-center">
+        <h2>Skills</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <i class="fab fa-python fa-3x"></i>
+                <h3>Python</h3>
+            </div>
+            <div class="col-md-4">
+                <i class="fab fa-js fa-3x"></i>
+                <h3>JavaScript</h3>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-database fa-3x"></i>
+                <h3>SQL</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container text-center">
+        <h2>Projects</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Coming soon...</h3>
+                <p>This is a really long description of an imaginary project of mine!</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Coming soon...</h3>
+                <p>This is a really long description of an imaginary project of mine!</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Coming soon...</h3>
+                <p>This is a really long description of an imaginary project of mine!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container text-center">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me through my social media platforms or email.</p>
+        <ul class="list-inline">
+            <li><a href="https://github.com/ekqiu"><i class="fab fa-github fa-3x"></i></a></li>
+            <li><a href="https://linkedin.com/in/evankhee"><i class="fab fa-linkedin fa-3x"></i></a></li>
+            <li><a href="mailto:evankheebohan@gmail.com"><i class="fa fa-envelope fa-3x"></i></a></li>
+        </ul>
+    </section>
+
+    <footer class="text-center">
+        <p>&copy; 2024 Evan Khee. All rights reserved.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>

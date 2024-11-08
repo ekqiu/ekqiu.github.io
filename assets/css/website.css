@@ -1,5 +1,111 @@
-nav {
-    background-color: #333;
-    color: rgb(70, 169, 100);
-    padding: 10px;
+/* General styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 50px; /* Adjust for fixed navbar */
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #28a745; /* Green color */
+}
+
+.navbar-nav > li > a {
+    font-size: 18px;
+    color: #28a745; /* Green color */
+}
+
+.navbar-nav > li > a:hover {
+    color: #218838; /* Darker green on hover */
+}
+
+.jumbotron {
+    background-color: #f8f9fa;
+    padding: 100px 25px;
+    border-bottom: 5px solid #28a745; /* Green border */
+    margin-bottom: 60px; /* Gap between sections */
+}
+
+.jumbotron .display-4 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #28a745; /* Green color */
+}
+
+.jumbotron .lead {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #218838; /* Darker green */
+}
+
+section {
+    padding: 60px 0;
+    margin-bottom: 60px; /* Gap between sections */
+    border-bottom: 1px solid #28a745; /* Thin green line */
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #28a745; /* Green color */
+}
+
+section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #6c757d; /* Secondary text color */
+}
+
+section .row > div {
+    margin-bottom: 30px;
+}
+
+section .fa-3x {
+    margin-bottom: 15px;
+    color: #28a745; /* Green color */
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    border-top: 5px solid #28a745; /* Green border */
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+    color: #6c757d; /* Secondary text color */
+}
+
+.list-inline > li {
+    margin: 0 10px;
+}
+
+.list-inline > li > a {
+    color: #28a745; /* Green color */
+}
+
+.list-inline > li > a:hover {
+    color: #218838; /* Darker green on hover */
+}
+
+.btn-primary {
+    background-color: #28a745; /* Green background */
+    border-color: #28a745; /* Green border */
+    color: #fff; /* White text */
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #218838; /* Darker green background on hover/focus/active */
+    border-color: #1e7e34; /* Darker green border on hover/focus/active */
+    color: #fff; /* White text */
+}
+
+.btn-lg {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-right: 10px; /* Space between buttons */
 }
