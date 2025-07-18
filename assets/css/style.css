@@ -134,8 +134,8 @@ body.fade {
 }
 
 .profile-image-border {
-    width: 165px;
-    height: 165px;
+    width: 175px;
+    height: 175px;
     border-radius: 50%;
     overflow: hidden;
     z-index: 1;
@@ -151,7 +151,8 @@ body.fade {
     right: -5px;
     bottom: -5px;
     z-index: -1;
-    background: linear-gradient(90deg, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    background: linear-gradient(90deg, #4CAF50 0%, #81C784 25%, #A5D6A7 50%, #81C784 75%, #4CAF50 100%);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8), 0 0 40px rgba(129, 199, 132, 0.6);
     border-radius: inherit;
     animation: spin 2s linear infinite;
 }
