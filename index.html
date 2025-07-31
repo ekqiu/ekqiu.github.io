@@ -3,7 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>evan's website</title>
+    <title>Evan Khee</title>
+    <meta name="description" content="Evan Khee - Student Developer specializing in JavaScript, Python, React, and Node.js. Explore my portfolio, open-source projects, and connect with me on GitHub and LinkedIn.">
+    <meta name="keywords" content="Evan Khee, student developer, JavaScript developer, Python programmer, React developer, Node.js, software engineer, web developer, portfolio, GitHub, LinkedIn, frontend, backend">
+    <meta name="author" content="Evan Khee">
+    <meta name="theme-color" content="#A0C49D">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ekqiu.github.io/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Evan Khee - Developer & Programmer">
+    <meta property="og:description" content="Evan Khee - Developer and Programmer. Explore my portfolio, projects, and connect with me on social media. Fortune favors the bold.">
+    <meta property="og:image" content="https://ekqiu.github.io/assets/images/profile.jpg">
+    <meta property="og:url" content="https://ekqiu.github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Evan Khee">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Evan Khee - Developer & Programmer">
+    <meta name="twitter:description" content="Evan Khee - Developer and Programmer. Explore my portfolio, projects, and connect with me on social media. Fortune favors the bold.">
+    <meta name="twitter:image" content="https://ekqiu.github.io/assets/images/profile.jpg">
+    
+    <link rel="icon" href="./assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="./assets/manifest.json">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <!-- Bootstrap CDN (without a tag) -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Font Awesome CDN -->
@@ -13,100 +45,85 @@
     <!-- Montserrat Font -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/website.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Custom Script -->
+    <script src="./assets/js/script.js"></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Evan Khee",
+        "url": "https://ekqiu.github.io",
+        "image": "https://ekqiu.github.io/assets/images/profile.jpg",
+        "sameAs": [
+            "https://github.com/ekqiu",
+            "https://linkedin.com/in/evankhee",
+            "https://instagram.com/ekqiu",
+            "https://t.me/ekqiu"
+        ],
+        "jobTitle": "Student Developer",
+        "description": "Student Developer specializing in JavaScript, Python, React, and Node.js development",
+        "knowsAbout": ["JavaScript", "Python", "React", "Node.js", "HTML", "CSS", "Git", "Web Development", "Software Engineering"],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Student"
+        },
+        "seeks": "Software Development Opportunities"
+    }
+    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#navbar-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Evan Khee</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <header class="jumbotron text-center">
-        <h1 class="display-4">Evan Khee</h1>
-        <p class="lead"> Student @ ASRJC </p>
-        <a href="/card" class="btn btn-primary btn-lg">View Social Card</a><a href="/portfolio" class="btn btn-primary btn-lg">View Portfolio</a>
-    </header>
-
-    <section id="about" class="container text-center">
-        <h2>About Me</h2>
-        <p>Hello! I'm Evan, a passionate developer with experience in web development, machine learning, and robotics. I
-            love creating innovative solutions and learning new technologies.</p>
-    </section>
-
-    <section id="skills" class="container text-center">
-        <h2>Skills</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <i class="fab fa-python fa-3x"></i>
-                <h3>Python</h3>
-            </div>
-            <div class="col-md-4">
-                <i class="fab fa-js fa-3x"></i>
-                <h3>JavaScript</h3>
-            </div>
-            <div class="col-md-4">
-                <i class="fas fa-database fa-3x"></i>
-                <h3>SQL</h3>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="container text-center">
-        <h2>Projects</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <h3>Coming soon...</h3>
-                <p>This is a really long description of an imaginary project of mine!</p>
-            </div>
-            <div class="col-md-4">
-                <h3>Coming soon...</h3>
-                <p>This is a really long description of an imaginary project of mine!</p>
-            </div>
-            <div class="col-md-4">
-                <h3>Coming soon...</h3>
-                <p>This is a really long description of an imaginary project of mine!</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="container text-center">
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me through my social media platforms or email.</p>
-        <ul class="list-inline">
-            <li><a href="https://github.com/ekqiu"><i class="fab fa-github fa-3x"></i></a></li>
-            <li><a href="https://linkedin.com/in/evankhee"><i class="fab fa-linkedin fa-3x"></i></a></li>
-            <li><a href="mailto:evankheebohan@gmail.com"><i class="fa fa-envelope fa-3x"></i></a></li>
-        </ul>
-    </section>
-
-    <footer class="text-center">
-        <p>&copy; 2025 Evan Khee. All rights reserved.</p>
-    </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script>
+        document.body.className = 'fade';
+    </script>
+    <div class="container-fluid">
+        <main class="content">
+            <section class="animate__animated animate__pulse jumbotron hero-section">>
+                <div class="profile-image-wrapper">
+                    <div class="profile-image-border"></div>
+                    <img src="./assets/images/profile.jpg" class="profile-image" alt="Evan Khee - Developer and Programmer">
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Evan Khee</h1>
+                    <h2 class="hero-subtitle">Student Developer</h2>
+                    <p class="quote-small" lang="la">"audentes fortuna iuvat"</p>
+                </div>
+                <nav class="social-icons" aria-label="Social Media Links">
+                    <ul class="list-inline">
+                        <li><a href="https://instagram.com/ekqiu" aria-label="Follow Evan Khee on Instagram" rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://github.com/ekqiu" aria-label="View Evan Khee's GitHub profile" rel="noopener noreferrer" target="_blank"><i class="fab fa-github"></i></a></li>
+                        <li><a href="https://linkedin.com/in/evankhee" aria-label="Connect with Evan Khee on LinkedIn" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://t.me/ekqiu" aria-label="Contact Evan Khee on Telegram" rel="noopener noreferrer" target="_blank"><i class="fab fa-telegram"></i></a></li>
+                        <li><a href="mailto:evankheebohan@gmail.com" aria-label="Send email to Evan Khee"><i class="fa fa-envelope"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Skills Section -->
+                <div class="skills-section">
+                    <h3 class="skills-title">Technologies & Tools</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fab fa-react"></i> React</span>
+                        <span class="skill-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                        <span class="skill-tag"><i class="fab fa-html5"></i> HTML/CSS</span>
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                    </div>
+                </div>
+            <!--  
+                <a href="https://evankhee.com/">
+                    <button class="btn btn-pill btn-lg">idk ❯</button>
+                </a>
+            -->
+            </section>
+        </main>
+    </div>
 </body>
 
 </html>
