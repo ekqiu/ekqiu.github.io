@@ -64,7 +64,7 @@ body::before {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--border-radius);
     color: var(--text-dark);
-    padding: 3rem 2rem;
+    padding: 4.5rem 2rem 3rem 2rem;
     max-width: 600px;
     width: 90%;
     box-shadow: 
@@ -253,27 +253,27 @@ body.fade .content {
     }
     
     .jumbotron {
-        padding: 2rem 1.5rem;
+        padding: 3.5rem 1.5rem 2rem 1.5rem;
         margin: 1rem;
     }
     
     .profile-image {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .profile-image-border {
         width: 150px;
         height: 150px;
     }
     
-    .profile-image-border {
-        width: 170px;
-        height: 170px;
-    }
-    
     .social-icons li a {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
     
     .social-icons li a i {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -287,18 +287,18 @@ body.fade .content {
     }
     
     .jumbotron {
-        padding: 1.5rem 1rem;
+        padding: 3rem 1rem 1.5rem 1rem;
         margin: 0.5rem;
     }
     
     .profile-image {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     
     .profile-image-border {
-        width: 140px;
-        height: 140px;
+        width: 120px;
+        height: 120px;
     }
     
     .social-icons ul {
@@ -306,12 +306,12 @@ body.fade .content {
     }
     
     .social-icons li a {
-        width: 55px;
-        height: 55px;
+        width: 45px;
+        height: 45px;
     }
     
     .social-icons li a i {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     
     .quote {
@@ -323,7 +323,7 @@ body.fade .content {
 /* Legacy mobile styles - keeping for compatibility */
 @media (max-width: 767px) {
     .jumbotron {
-        padding: 20px 60px 20px 60px !important;
+        padding: 30px 60px 20px 60px !important;
     }
     body {
         font-size: 18px;
@@ -338,14 +338,14 @@ body.fade .content {
     }
 
     .social-icons li a i {
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
 /* Adjust padding and margins for smaller screens */
 @media (max-width: 380px) {
     .jumbotron {
-        padding: 20px 60px 20px 60px !important;
+        padding: 25px 60px 20px 60px !important;
     }
 
     .jumbotron h1 {
@@ -377,7 +377,7 @@ body.fade .content {
     }
 
     .social-icons li a i {
-        font-size: 30px;
+        font-size: 24px;
     }
 }
 
