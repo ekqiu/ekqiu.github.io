@@ -582,7 +582,7 @@ body.fade .content {
 .portfolio-item .item-info {
     flex: 1;
     padding: 20px;
-    background-color: #FFFFFF;
+    background-color: #96b893;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -601,7 +601,7 @@ body.fade .content {
 .portfolio-item .item-info .btn {
     border-radius: 50px;
     background-color: #96b893;
-    color: #FFFFFF;
+    color: #96b893;
     padding: 10px 20px;
     text-decoration: none;
     transition: background-color 0.3s;
