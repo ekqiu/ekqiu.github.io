@@ -91,9 +91,6 @@ body::before {
 body {
     background: #A0C49D; /* Fallback color */
     background: linear-gradient(135deg, var(--primary-color) 0%, #8FBC8F 100%);
-    opacity: 1;
-    transition-duration: 1s;
-    transition-property: opacity;
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -103,17 +100,20 @@ body {
     overflow-x: hidden;
 }
 
-body.fade {
-    opacity: 0;
-}
-
 .content {
+    opacity: 1;
+    transition-duration: 1s;
+    transition-property: opacity;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     text-align: center;
+}
+
+body.fade .content {
+    opacity: 0;
 }
 
 .social-icons {
