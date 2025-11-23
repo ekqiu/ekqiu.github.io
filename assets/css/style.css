@@ -1,22 +1,26 @@
 /* CSS Performance and Base Styles */
 :root {
-    --primary-color: #A0C49D;
-    --secondary-color: #F7FFE5;
-    --accent-color: #4CAF50;
-    --text-dark: #333333;
-    --text-light: #666666;
-    --text-muted: #999999;
-    --shadow-light: rgba(50, 50, 93, 0.25);
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #f093fb;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --text-dark: #1a1a2e;
+    --text-light: #4a5568;
+    --text-muted: #718096;
+    --shadow-light: rgba(102, 126, 234, 0.15);
     --shadow-medium: rgba(0, 0, 0, 0.1);
-    --shadow-dark: rgba(0, 0, 0, 0.3);
-    --border-radius: 20px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
+    --shadow-glow: rgba(102, 126, 234, 0.3);
+    --border-radius: 24px;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* iOS Safari fixes */
 html {
-    background: #A0C49D;
-    background: linear-gradient(135deg, #A0C49D 0%, #8FBC8F 100%);
+    background: #667eea;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
     min-height: 100vh;
     -webkit-background-size: cover;
     background-size: cover;
@@ -27,12 +31,12 @@ html {
 }
 
 body {
-    background: #A0C49D; /* Fallback color */
-    background: linear-gradient(135deg, var(--primary-color) 0%, #8FBC8F 100%);
+    background: #667eea; /* Fallback color */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
     background-attachment: fixed; /* Prevents iOS background issues */
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     position: relative;
@@ -40,6 +44,8 @@ body {
     min-height: 100vh; /* Ensures full height on iOS */
     -webkit-background-size: cover;
     background-size: cover;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body::before {
@@ -50,27 +56,38 @@ body::before {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 60%),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 60% 40%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
 }
 
 .jumbotron {
-    background: rgba(247, 255, 229, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--border-radius);
     color: var(--text-dark);
-    padding: 4.5rem 2rem 3rem 2rem;
-    max-width: 600px;
+    padding: 5rem 3rem 4rem 3rem;
+    max-width: 700px;
     width: 90%;
     box-shadow: 
-        0 20px 40px var(--shadow-light),
-        0 10px 20px var(--shadow-medium),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        0 25px 50px -12px var(--shadow-light),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -83,8 +100,8 @@ body::before {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
 }
 
 .jumbotron:hover::before {
@@ -92,36 +109,39 @@ body::before {
 }
 
 .jumbotron:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.01);
     box-shadow: 
-        0 25px 50px var(--shadow-light),
-        0 15px 25px var(--shadow-medium),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        0 35px 60px -12px var(--shadow-glow),
+        0 0 0 1px rgba(255, 255, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* For the fade animation */
 
 body {
-    background: #A0C49D; /* Fallback color */
-    background: linear-gradient(135deg, var(--primary-color) 0%, #8FBC8F 100%);
+    background: #667eea; /* Fallback color */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     position: relative;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .content {
     opacity: 1;
-    transition-duration: 1s;
-    transition-property: opacity;
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 2rem 1rem;
     text-align: center;
 }
 
@@ -151,40 +171,45 @@ body.fade .content {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px) saturate(180%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     box-shadow: 
-        0 4px 15px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        0 8px 20px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        0 0 0 0 rgba(102, 126, 234, 0.4);
     transition: var(--transition);
     text-decoration: none;
+    position: relative;
 }
 
 .social-icons li a:hover,
 .social-icons li a:focus {
-    background: rgba(255, 255, 255, 0.4);
-    border-color: rgba(255, 255, 255, 0.6);
-    transform: translateY(-3px) scale(1.05);
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px) scale(1.1);
     box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        0 15px 35px rgba(102, 126, 234, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 20px rgba(102, 126, 234, 0.4);
 }
 
 .social-icons li a i {
     color: var(--text-dark);
-    font-size: 2.5rem;
-    transition: var(--transition);
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+    font-size: 2.8rem;
+    transition: var(--transition-fast);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.6);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .social-icons li a:hover i,
 .social-icons li a:focus i {
-    color: var(--accent-color);
-    transform: scale(1.1);
+    color: var(--primary-color);
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.4));
 }
 
 .social-icons li a:focus {
@@ -204,22 +229,24 @@ body.fade .content {
 }
 
 .hero-title {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 3.5rem;
+    font-weight: 800;
     margin: 0 0 0.5rem 0;
-    background: linear-gradient(135deg, var(--text-dark), var(--accent-color));
+    background: linear-gradient(135deg, #1a1a2e 0%, #667eea 50%, #764ba2 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 4px var(--shadow-medium);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--text-light);
-    margin: 0 0 1.5rem 0;
-    letter-spacing: 0.5px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0 0 2rem 0;
+    letter-spacing: 0.3px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-description {
@@ -241,11 +268,11 @@ body.fade .content {
 /* Enhanced Mobile Responsiveness */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
     
     .hero-subtitle {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     
     .hero-description {
@@ -253,8 +280,49 @@ body.fade .content {
     }
     
     .jumbotron {
-        padding: 3.5rem 1.5rem 2rem 1.5rem;
+        padding: 4rem 2rem 3rem 2rem;
         margin: 1rem;
+        border-radius: 20px;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .profile-image-border {
+        width: 170px;
+        height: 170px;
+    }
+    
+    .social-icons li a {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .social-icons li a i {
+        font-size: 2.2rem;
+    }
+    
+    .skill-tag {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .jumbotron {
+        padding: 3.5rem 1.5rem 2.5rem 1.5rem;
+        margin: 0.75rem;
+        border-radius: 18px;
     }
     
     .profile-image {
@@ -267,6 +335,54 @@ body.fade .content {
         height: 150px;
     }
     
+    .social-icons ul {
+        gap: 1.2rem;
+    }
+    
+    .social-icons li a {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .social-icons li a i {
+        font-size: 2rem;
+    }
+    
+    .skill-tag {
+        padding: 0.75rem 1.3rem;
+        font-size: 0.9rem;
+    }
+    
+    .skills-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Additional polish for very small screens */
+@media (max-width: 380px) {
+    .jumbotron {
+        padding: 3rem 1.25rem 2rem 1.25rem;
+        margin: 0.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .profile-image-border {
+        width: 140px;
+        height: 140px;
+    }
+    
     .social-icons li a {
         width: 50px;
         height: 50px;
@@ -275,153 +391,39 @@ body.fade .content {
     .social-icons li a i {
         font-size: 1.8rem;
     }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
     
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .jumbotron {
-        padding: 3rem 1rem 1.5rem 1rem;
-        margin: 0.5rem;
-    }
-    
-    .profile-image {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .profile-image-border {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .social-icons ul {
-        gap: 1rem;
-    }
-    
-    .social-icons li a {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .social-icons li a i {
-        font-size: 1.6rem;
-    }
-    
-    .quote {
+    .skill-tag {
+        padding: 0.7rem 1.2rem;
         font-size: 0.85rem;
-        padding: 0.8rem;
-    }
-}
-
-/* Legacy mobile styles - keeping for compatibility */
-@media (max-width: 767px) {
-    .jumbotron {
-        padding: 30px 60px 20px 60px !important;
-    }
-    body {
-        font-size: 18px;
-    }
-
-    .jumbotron h1 {
-        font-size: 40px !important;
-    }
-
-    .jumbotron p .btn-lg {
-        font-size: 15px !important;
-    }
-
-    .social-icons li a i {
-        font-size: 30px;
-    }
-}
-
-/* Adjust padding and margins for smaller screens */
-@media (max-width: 380px) {
-    .jumbotron {
-        padding: 25px 60px 20px 60px !important;
-    }
-
-    .jumbotron h1 {
-        margin-bottom: 10px;
-    }
-
-    .jumbotron p  {
-        margin-bottom: 10px;
-    }
-
-    .social-icons li {
-        margin-bottom: 10px;
-    }
-    body {
-        font-size: 15px;
-    }
-
-    .jumbotron h1 {
-        font-size: 30px !important;
-    }
-
-    .jumbotron p {
-        font-size: 10px !important;
-    }
-    .btn-lg {
-        font-size: 10px !important;
-        padding: 5px 10px !important;
-        margin: 5px !important;
-    }
-
-    .social-icons li a i {
-        font-size: 24px;
-    }
-}
-
-
-
-/* Adjust padding and margins for smaller screens */
-@media (max-width: 330px) {
-    .jumbotron {
-        padding: 20px 10px 20px 10px !important;
-    }
-
-    .jumbotron h1 {
-        margin-bottom: 10px;
-    }
-
-    .jumbotron p {
-        margin-bottom: 20px;
-    }
-
-    .social-icons li {
-        margin-bottom: 10px;
     }
 }
 
 .profile-image {
     border-radius: 50%;
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     z-index: 2;
     position: relative;
     object-fit: cover;
-    border: 4px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 10px 30px var(--shadow-medium);
+    border: 5px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.2),
+        0 0 0 0 rgba(102, 126, 234, 0.4),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.3);
     transition: var(--transition);
 }
 
 .profile-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 40px var(--shadow-dark);
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(102, 126, 234, 0.5),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
 .profile-image-border {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     overflow: hidden;
     z-index: 1;
@@ -431,15 +433,18 @@ body.fade .content {
 .profile-image-border::before {
     content: "";
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
     z-index: -1;
-    background: linear-gradient(90deg, #4CAF50 0%, #81C784 25%, #A5D6A7 50%, #81C784 75%, #4CAF50 100%);
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8), 0 0 40px rgba(129, 199, 132, 0.6);
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #764ba2 75%, #667eea 100%);
+    box-shadow: 
+        0 0 30px rgba(102, 126, 234, 0.6),
+        0 0 60px rgba(118, 75, 162, 0.4),
+        0 0 90px rgba(240, 147, 251, 0.3);
     border-radius: inherit;
-    animation: spin 2s linear infinite;
+    animation: spin 3s linear infinite;
 }
 
 .profile-image-wrapper {
@@ -463,39 +468,40 @@ body.fade .content {
 
 @keyframes float {
     0%, 100% {
-        transform: translateY(0px);
+        transform: translateY(0px) rotate(0deg);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-15px) rotate(2deg);
     }
 }
 
 .hero-content {
-    animation: fadeInUp 0.8s ease-out 0.3s both;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
 }
 
 .profile-image-wrapper {
-    animation: float 3s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
 }
 
 .social-icons {
-    animation: fadeInUp 0.8s ease-out 0.6s both;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
 }
 
 /* Skills Section */
 .skills-section {
     margin-top: 2.5rem;
-    animation: fadeInUp 0.8s ease-out 0.9s both;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.9s both;
 }
 
 .skills-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 1.8rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2rem;
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .skills-grid {
@@ -508,44 +514,49 @@ body.fade .content {
 }
 
 .skill-tag {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 30px;
-    padding: 0.8rem 1.5rem;
-    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50px;
+    padding: 1rem 1.8rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text-dark);
     transition: var(--transition);
     cursor: default;
     box-shadow: 
-        0 4px 15px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+        0 8px 20px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        0 0 0 0 rgba(102, 126, 234, 0.3);
+    text-transform: none;
+    letter-spacing: 0.3px;
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.8rem;
 }
 
 .skill-tag i {
-    font-size: 1.3rem;
-    color: var(--accent-color);
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.6);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: var(--transition-fast);
 }
 
 .skill-tag:hover {
-    background: rgba(255, 255, 255, 0.45);
-    border-color: rgba(255, 255, 255, 0.6);
-    transform: translateY(-3px) scale(1.05);
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px) scale(1.08);
     box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        0 15px 35px rgba(102, 126, 234, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 25px rgba(102, 126, 234, 0.3);
 }
 
 .skill-tag:hover i {
-    color: var(--text-dark);
-    transform: scale(1.1);
+    color: var(--secondary-color);
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.4));
 }
 
 /* Spinning border animation */
@@ -644,8 +655,8 @@ img {
 /* iOS Safari specific fixes */
 @supports (-webkit-overflow-scrolling: touch) {
     html, body {
-        background: #A0C49D !important;
-        background: linear-gradient(135deg, #A0C49D 0%, #8FBC8F 100%) !important;
+        background: #667eea !important;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
         background-attachment: scroll !important;
         min-height: 100vh !important;
         position: relative;
@@ -670,8 +681,8 @@ only screen
   and (device-height: 844px) 
   and (-webkit-device-pixel-ratio: 3) {
     html, body {
-        background: #A0C49D !important;
-        background: linear-gradient(135deg, #A0C49D 0%, #8FBC8F 100%) !important;
+        background: #667eea !important;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
         background-attachment: scroll !important;
     }
 }
