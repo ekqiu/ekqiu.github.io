@@ -4,8 +4,8 @@
     "description": "Evan Khee's personal website.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#F7FFE5",
-    "theme_color": "#A0C49D",
+    "background_color": "#667eea",
+    "theme_color": "#667eea",
     "icons": [
         {
             "src": "/assets/icon-192.png",
